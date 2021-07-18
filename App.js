@@ -82,8 +82,31 @@ class App extends Component {
                 </View>
 
                 {/* Details */}
-                <View style={{}}>
-                  {/* I will be adding all the contents here */}
+                <View style={styles.movieContentHolder}>
+                  <Text style={styles.title}>
+                    Movie Title :- {this.state.data.title}
+                  </Text>
+                  <Text style={styles.title}>
+                    Original Language :- {this.state.data.original_language}
+                  </Text>
+
+                  <Text style={styles.title}>Description :- </Text>
+                  <Text
+                    style={{
+                      fontSize: 17,
+                      marginLeft: 15,
+                      paddingHorizontal: 10,
+                    }}
+                  >
+                    {this.state.data.overview}
+                  </Text>
+
+                  <Text style={styles.title}>
+                    Movie Popularity :- {this.state.data.popularity} million
+                  </Text>
+                  <Text style={styles.title}>
+                    Movie Votes :- {this.state.data.vote_count} votes
+                  </Text>
                 </View>
               </View>
             ) : (
@@ -106,5 +129,17 @@ const styles = StyleSheet.create({
     height: "90%",
     alignSelf: "center",
     marginTop: "3%",
+  },
+  title: {
+    fontSize: 20,
+    fontWeight: "bold",
+    margin: 10,
+  },
+  movieContentHolder: {
+    backgroundColor: "#dfe6e9",
+    borderRadius: 10,
+    borderColor: "#000",
+    borderWidth: 0.5,
+    height: "55%",
   },
 });
